@@ -31,7 +31,7 @@ function handleClick(e){
   let whoseTurn = currentIcon ? xClass : oClass
   placeMark(cell, whoseTurn)
 
-  checkWinningCombos()
+  // checkWinningCombos()
   swapTurn(whoseTurn)
   addHoverclass()
   
