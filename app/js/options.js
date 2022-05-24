@@ -53,10 +53,10 @@ btn2[1].addEventListener('click', () =>{
   btn1[1].classList.remove('active')
   btn2[1].classList.add('active')
 })
-nextBtn[1].addEventListener('click',()=>{
-  optionScreen2.classList.add('hide')
-  optionScreen3.classList.remove('hide')
-})
+nextBtn[1].addEventListener('click', () =>{
+    optionScreen2.classList.add('hide')
+    optionScreen3.classList.remove('hide')
+  })
 btn1[2].addEventListener('click', () =>{
   icon = "x"
   btn2[2].classList.remove('active')
@@ -67,7 +67,7 @@ btn2[2].addEventListener('click', () =>{
   btn1[2].classList.remove('active')
   btn2[2].classList.add('active')
 })
-nextBtn[2].addEventListener('click',()=>{
+nextBtn[2].addEventListener('click', () =>{
   optionScreen3.classList.add('hide')
   gameBoard.style.filter = "blur(0)"
   startGame()

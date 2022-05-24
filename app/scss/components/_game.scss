@@ -17,14 +17,14 @@
     position: relative;
     --height: calc(var(--cell-size) * 0.8);
   }
-  .cell.x,
-  .cell.o{
+  .cell.X,
+  .cell.O{
     cursor: not-allowed;
   }
-  &.x .cell:not(.o):not(.x):hover::before,
-  &.x .cell:not(.o):not(.x):hover::after,
-  .cell.x::before,
-  .cell.x::after{
+  &.X .cell:not(.O):not(.X):hover::before,
+  &.X .cell:not(.O):not(.X):hover::after,
+  .cell.X::before,
+  .cell.X::after{
     content: "";
     position: absolute;
     inset: 0;
@@ -33,48 +33,48 @@
     margin: auto;
     background-color: var(--accent-color);
   }
-  &.x .cell:not(.o):not(.x):hover::before,
-  .cell.x::before{
+  &.X .cell:not(.O):not(.X):hover::before,
+  .cell.X::before{
     transform: rotate(45deg);
   }
-  &.x .cell:not(.o):not(.x):hover::after,
-  .cell.x::after{
+  &.X .cell:not(.O):not(.X):hover::after,
+  .cell.X::after{
     transform: rotate(-45deg);
   }
-  &.x .cell:not(.o):not(.x):hover::before,
-  &.x .cell:not(.o):not(.x):hover::after{
+  &.X .cell:not(.O):not(.X):hover::before,
+  &.X .cell:not(.O):not(.X):hover::after{
     background-color: var(--hover-game-color);
   }
 
   // styling the O component
-  .cell.o,
-  &.o .cell:hover{
-    --o-size: calc(var(--cell-size)*0.7);
+  .cell.O,
+  &.O .cell:hover{
+    --O-size: calc(var(--cell-size)*0.7);
     position: relative;
   }
-  .cell.o::before,
-  .cell.o::after,
-  &.o .cell:not(.o):not(.x):hover::before,
-  &.o .cell:not(.o):not(.x):hover::after{
+  .cell.O::before,
+  .cell.O::after,
+  &.O .cell:not(.O):not(.X):hover::before,
+  &.O .cell:not(.O):not(.X):hover::after{
     content: "";
     position: absolute;
     inset: 0;
-    height: var(--o-size);
-    width: var(--o-size);
+    height: var(--O-size);
+    width: var(--O-size);
     margin: auto;
     background-color: var(--accent-color);
     border-radius: 50%;
   }
-  .cell.o::after,
-  &.o .cell:not(.o):not(.x):hover::after{
-    width: calc(var(--o-size) * 0.85);
-    height: calc(var(--o-size) * 0.85);
+  .cell.O::after,
+  &.O .cell:not(.O):not(.X):hover::after{
+    width: calc(var(--O-size) * 0.85);
+    height: calc(var(--O-size) * 0.85);
     background-color: var(--bg-color);
   }
-  &.o .cell:not(.o):not(.x):hover::before{
+  &.O .cell:not(.O):not(.X):hover::before{
     background-color: var(--hover-game-color);
   }
-  &.o .cell:not(.o):not(.x):hover::after{
+  &.O .cell:not(.O):not(.X):hover::after{
     background-color: var(--bg-color);
   }
 }

@@ -1,14 +1,14 @@
 :root{
-  --nav-size: 3em;
+  --nav-size: 4em;
 
   --game-size: 300px;
 }
 
 .wrapper{
   margin-top: var(--nav-size);
-  height: 150vh;
+  height: 110vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5em;
+  gap: 4em;
 }
