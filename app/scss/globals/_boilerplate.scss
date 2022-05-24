@@ -1,0 +1,27 @@
+html{
+  font-size: 100%;
+  font-family: var(--font-body);
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.container{
+  width: 95%;
+  margin: 0 auto;
+}
+button{
+  color: inherit;
+  background-color: transparent;
+  padding: .75em 2em;
+  border-radius: 1em;
+  cursor: pointer;
+}

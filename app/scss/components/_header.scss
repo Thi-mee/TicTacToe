@@ -1,0 +1,24 @@
+header{
+  min-height: 30vh;
+  margin: 2em;
+  text-align: center;
+  
+  p{
+    margin-top: 1em; 
+    color: gray;
+  }
+  .big-p{
+    font-size: 2rem;
+    color: white;
+    line-height: 1.1;
+  }
+  
+
+
+
+
+
+  .accent{
+    color: var(--accent-color);
+  }
+}

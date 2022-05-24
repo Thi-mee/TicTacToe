@@ -1,0 +1,14 @@
+:root{
+  --nav-size: 3em;
+
+  --game-size: 300px;
+}
+
+.wrapper{
+  margin-top: var(--nav-size);
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5em;
+}

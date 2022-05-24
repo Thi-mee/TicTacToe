@@ -1,0 +1,1 @@
+main{background-color:red}.gameboard{display:grid;grid-template-columns:repeat(3, 120px)}.gameboard .cells{background-color:#fff}

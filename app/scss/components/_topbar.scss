@@ -1,0 +1,17 @@
+.topbar{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: var(--nav-size);
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 3px 8px hsl(0, 0%, 0%);
+
+  h1{
+    font-size: 2rem;
+    
+  }
+}

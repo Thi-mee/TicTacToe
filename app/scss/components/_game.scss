@@ -1,0 +1,80 @@
+.game-board{
+  width: var(--game-size);
+  height: var(--game-size);
+  margin: 1em auto;
+  display: grid;
+  filter: blur(10px);
+  --cell-size: calc(var(--game-size)/3);
+  grid-template-columns: repeat(3, var(--cell-size));
+  gap: 2px;
+  background-color: white;
+
+  .cell{
+    background-color: var(--bg-color);
+    width: var(--cell-size);
+    height: var(--cell-size);
+    cursor: pointer;
+    position: relative;
+    --height: calc(var(--cell-size) * 0.8);
+  }
+  .cell.x,
+  .cell.o{
+    cursor: not-allowed;
+  }
+  &.x .cell:not(.o):not(.x):hover::before,
+  &.x .cell:not(.o):not(.x):hover::after,
+  .cell.x::before,
+  .cell.x::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: var(--height);
+    width: calc(var(--height) * 0.07);
+    margin: auto;
+    background-color: var(--accent-color);
+  }
+  &.x .cell:not(.o):not(.x):hover::before,
+  .cell.x::before{
+    transform: rotate(45deg);
+  }
+  &.x .cell:not(.o):not(.x):hover::after,
+  .cell.x::after{
+    transform: rotate(-45deg);
+  }
+  &.x .cell:not(.o):not(.x):hover::before,
+  &.x .cell:not(.o):not(.x):hover::after{
+    background-color: var(--hover-game-color);
+  }
+
+  // styling the O component
+  .cell.o,
+  &.o .cell:hover{
+    --o-size: calc(var(--cell-size)*0.7);
+    position: relative;
+  }
+  .cell.o::before,
+  .cell.o::after,
+  &.o .cell:not(.o):not(.x):hover::before,
+  &.o .cell:not(.o):not(.x):hover::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: var(--o-size);
+    width: var(--o-size);
+    margin: auto;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+  }
+  .cell.o::after,
+  &.o .cell:not(.o):not(.x):hover::after{
+    width: calc(var(--o-size) * 0.85);
+    height: calc(var(--o-size) * 0.85);
+    background-color: var(--bg-color);
+  }
+  &.o .cell:not(.o):not(.x):hover::before{
+    background-color: var(--hover-game-color);
+  }
+  &.o .cell:not(.o):not(.x):hover::after{
+    background-color: var(--bg-color);
+  }
+}

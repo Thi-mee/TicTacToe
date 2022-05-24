@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TicTacToe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/css/style.min.css">
+  <script defer src="./app/js/options.js"></script>
+  <script defer src="./app/js/game.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="topbar">
+      <h1>TicTacToe</h1>
+      <div class="toggle">
+        <input type="checkbox" name="toggle" id="toggle">
+        <label for="toggle">theme</label>
+      </div>
+    </div>
+    <div class="wrapper">
+      <header>
+        <p class="big-p"><span class="accent"> Bored?</span> <br>Play a game of <span class="accent">TicTacToe</span> with <span class="accent">your friend</span>  or against the <span class="accent">computer</span>!</p>
+        <p contenteditable="true" spellcheck="true">I personall challeng you to beat the compter on hard mode</p>
+      </header>
+      <main>
+        <div class="game-board" id="game-board">
+          <div class="cell 1"></div>
+          <div class="cell 2"></div>
+          <div class="cell 3"></div>
+          <div class="cell 4"></div>
+          <div class="cell 5"></div>
+          <div class="cell 6"></div>
+          <div class="cell 7"></div>
+          <div class="cell 8"></div>
+          <div class="cell 9"></div>
+        </div>
+        <div class="option-screen 1" id="screen-1">
+          <p>Choose your opponent</p>
+          <div class="options">
+            <button data-button-1 class="button 1">Friend</button>
+            <button data-button-2 class="button 2">Computer</button>
+          </div>
+          <button class="next-button">next</button>
+        </div>
+        <div class="option-screen 2 hide" id="screen-2">
+          <p>Select Difficulty</p>
+          <div class="options">
+            <button data-button-1>Easy</button>
+            <button data-button-2>Hard</button>
+          </div>
+          <button class="next-button">next</button>
+        </div>
+        <div class="option-screen 3 hide" id="screen-3">
+          <p>select your Icon</p>
+          <div class="options">
+            <button data-button-1>X</button>
+            <button data-button-2>O</button>
+          </div>
+          <button class="next-button">start</button>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>
