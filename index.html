@@ -29,44 +29,50 @@
         <p contenteditable="true" spellcheck="true">I personall challeng you to beat the compter on hard mode</p>
       </header>
       <main>
-        <div class="game-board" id="game-board">
-          <div class="cell 1" data-cell></div>
-          <div class="cell 2" data-cell></div>
-          <div class="cell 3" data-cell></div>
-          <div class="cell 4" data-cell></div>
-          <div class="cell 5" data-cell></div>
-          <div class="cell 6" data-cell></div>
-          <div class="cell 7" data-cell></div>
-          <div class="cell 8" data-cell></div>
-          <div class="cell 9" data-cell></div>
-        </div>
-        <div class="option-screen 1" id="screen-1">
-          <p>Choose your opponent</p>
-          <div class="options">
-            <button data-button-1 class="button 1">Friend</button>
-            <button data-button-2 class="button 2">Computer</button>
+        <div class="game-container">
+          <div class="game-board" id="game-board">
+            <div class="cell 1" data-cell></div>
+            <div class="cell 2" data-cell></div>
+            <div class="cell 3" data-cell></div>
+            <div class="cell 4" data-cell></div>
+            <div class="cell 5" data-cell></div>
+            <div class="cell 6" data-cell></div>
+            <div class="cell 7" data-cell></div>
+            <div class="cell 8" data-cell></div>
+            <div class="cell 9" data-cell></div>
           </div>
-          <button class="next-button">next</button>
-        </div>
-        <div class="option-screen 2 hide" id="screen-2">
-          <p>Select Difficulty</p>
-          <div class="options">
-            <button data-button-1>Easy</button>
-            <button data-button-2>Hard</button>
+          <div class="option-screen 1" id="screen-1">
+            <p>Choose your opponent</p>
+            <div class="options">
+              <button data-button-1 class="button 1">Friend</button>
+              <button data-button-2 class="button 2">Computer</button>
+            </div>
+            <button class="next-button">next</button>
           </div>
-          <button class="next-button">next</button>
-        </div>
-        <div class="option-screen 3 hide" id="screen-3">
-          <p>select your Icon</p>
-          <div class="options">
-            <button data-button-1>X</button>
-            <button data-button-2>O</button>
+          <div class="option-screen 2 hide" id="screen-2">
+            <p>Select Difficulty</p>
+            <div class="options">
+              <button data-button-1>Easy</button>
+              <button data-button-2>Hard</button>
+            </div>
+            <button class="next-button">next</button>
           </div>
-          <button class="next-button">start</button>
-        </div>
-        <div class="option-screen 4 hide" id="screen-4">
-          <p id="end-message"></p>
-          <button id="restart-btn">Restart</button>
+          <div class="option-screen 3 hide" id="screen-3">
+            <p>select your Icon</p>
+            <div class="options">
+              <button data-button-1>X</button>
+              <button data-button-2>O</button>
+            </div>
+            <button class="next-button">start</button>
+          </div>
+          <div class="option-screen 4 hide" id="screen-4">
+            <p id="end-message"></p>
+            
+          </div>
+          <div class="span">
+            <span class="display" id="display"></span>
+            <button class="restart hide" id="restart-btn">Restart</button>
+          </div>
         </div>
       </main>
     </div>

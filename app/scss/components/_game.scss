@@ -1,80 +1,117 @@
-.game-board{
-  width: var(--game-size);
-  height: var(--game-size);
-  margin: 1em auto;
-  display: grid;
-  filter: blur(10px);
-  --cell-size: calc(var(--game-size)/3);
-  grid-template-columns: repeat(3, var(--cell-size));
-  gap: 2px;
-  background-color: white;
+.game-container{
+  display: flex;
+  flex-direction: column;
+  .game-board{
+    width: var(--game-size);
+    height: var(--game-size);
+    margin: 0 auto;
+    display: grid;
+    filter: blur(10px);
+    --cell-size: calc(var(--game-size)/3);
+    grid-template-columns: repeat(3, var(--cell-size));
+    gap: 2px;
+    background-color: white;
+  
+    .cell{
+      background-color: var(--bg-color);
+      width: var(--cell-size);
+      height: var(--cell-size);
+      cursor: pointer;
+      position: relative;
+      --height: calc(var(--cell-size) * 0.8);
+    }
+    .cell.X,
+    .cell.O{
+      cursor: not-allowed;
+    }
+    &.X .cell:not(.O):not(.X):hover::before,
+    &.X .cell:not(.O):not(.X):hover::after,
+    .cell.X::before,
+    .cell.X::after{
+      content: "";
+      position: absolute;
+      inset: 0;
+      height: var(--height);
+      width: calc(var(--height) * 0.07);
+      margin: auto;
+      background-color: var(--accent-color);
+    }
+    &.X .cell:not(.O):not(.X):hover::before,
+    .cell.X::before{
+      transform: rotate(45deg);
+    }
+    &.X .cell:not(.O):not(.X):hover::after,
+    .cell.X::after{
+      transform: rotate(-45deg);
+    }
+    &.X .cell:not(.O):not(.X):hover::before,
+    &.X .cell:not(.O):not(.X):hover::after{
+      background-color: var(--hover-game-color);
+    }
+  
+    // styling the O component
+    .cell.O,
+    &.O .cell:hover{
+      --O-size: calc(var(--cell-size)*0.7);
+      position: relative;
+    }
+    .cell.O::before,
+    .cell.O::after,
+    &.O .cell:not(.O):not(.X):hover::before,
+    &.O .cell:not(.O):not(.X):hover::after{
+      content: "";
+      position: absolute;
+      inset: 0;
+      height: var(--O-size);
+      width: var(--O-size);
+      margin: auto;
+      background-color: var(--accent-color);
+      border-radius: 50%;
+    }
+    .cell.O::after,
+    &.O .cell:not(.O):not(.X):hover::after{
+      width: calc(var(--O-size) * 0.85);
+      height: calc(var(--O-size) * 0.85);
+      background-color: var(--bg-color);
+    }
+    &.O .cell:not(.O):not(.X):hover::before{
+      background-color: var(--hover-game-color);
+    }
+    &.O .cell:not(.O):not(.X):hover::after{
+      background-color: var(--bg-color);
+    }
+  }
 
-  .cell{
-    background-color: var(--bg-color);
-    width: var(--cell-size);
-    height: var(--cell-size);
-    cursor: pointer;
-    position: relative;
-    --height: calc(var(--cell-size) * 0.8);
+  .span{
+    display: flex;
+    justify-content: space-between;
+    margin-top: .75em;
   }
-  .cell.X,
-  .cell.O{
-    cursor: not-allowed;
+  .display{
+    
+    height: 40px;
+    width: 40%;
+    border: 1px solid black;
+    color: white;
+    padding: .6em;
+    box-shadow: inset -2px 2px 5px rgba(0, 0, 0, 0.8);
   }
-  &.X .cell:not(.O):not(.X):hover::before,
-  &.X .cell:not(.O):not(.X):hover::after,
-  .cell.X::before,
-  .cell.X::after{
-    content: "";
-    position: absolute;
-    inset: 0;
-    height: var(--height);
-    width: calc(var(--height) * 0.07);
-    margin: auto;
-    background-color: var(--accent-color);
+  .restart{
+    height: 40px;
+    width: 40%;
+    border-radius: 0;
+    border: 1px solid black;
+    background-color: hsl(60, 59%, 58%);
+    color: black;
+    transform: translateY(-4px);
+    box-shadow: -3px 8px 2px rgba(0, 0, 0, 0.8);
+    transition: transform 150ms;
+    &:hover{
+      transform: translateY(0px);
+      font-weight: bold;
+    }
   }
-  &.X .cell:not(.O):not(.X):hover::before,
-  .cell.X::before{
-    transform: rotate(45deg);
-  }
-  &.X .cell:not(.O):not(.X):hover::after,
-  .cell.X::after{
-    transform: rotate(-45deg);
-  }
-  &.X .cell:not(.O):not(.X):hover::before,
-  &.X .cell:not(.O):not(.X):hover::after{
-    background-color: var(--hover-game-color);
-  }
-
-  // styling the O component
-  .cell.O,
-  &.O .cell:hover{
-    --O-size: calc(var(--cell-size)*0.7);
-    position: relative;
-  }
-  .cell.O::before,
-  .cell.O::after,
-  &.O .cell:not(.O):not(.X):hover::before,
-  &.O .cell:not(.O):not(.X):hover::after{
-    content: "";
-    position: absolute;
-    inset: 0;
-    height: var(--O-size);
-    width: var(--O-size);
-    margin: auto;
-    background-color: var(--accent-color);
-    border-radius: 50%;
-  }
-  .cell.O::after,
-  &.O .cell:not(.O):not(.X):hover::after{
-    width: calc(var(--O-size) * 0.85);
-    height: calc(var(--O-size) * 0.85);
-    background-color: var(--bg-color);
-  }
-  &.O .cell:not(.O):not(.X):hover::before{
-    background-color: var(--hover-game-color);
-  }
-  &.O .cell:not(.O):not(.X):hover::after{
-    background-color: var(--bg-color);
+  .hide{
+    display: none;
   }
 }

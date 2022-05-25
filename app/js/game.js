@@ -3,6 +3,8 @@ const oClass = "O"
 const cells = document.querySelectorAll("[data-cell]")
 const finalScreen = document.getElementById("screen-4")
 const finalMessage = document.getElementById("end-message")
+const display = document.getElementById("display")
+const restartBtn = document.getElementById("restart-btn")
 const winningCombos = [
   [0,1,2],[3,4,5],[6,7,8],
   [0,3,6],[1,4,7],[2,5,8],
@@ -19,9 +21,12 @@ document.getElementById("restart-btn").addEventListener("click", startGame)
 function startGame(){
   if(icon==="x"){currentIcon = true}
   else if(icon==="o"){currentIcon = false}
+
+  display.textContent= `${icon}'s turn`
   
   gameBoard.style.filter = "blur(0px)"
   finalScreen.classList.add("hide")
+  restartBtn.classList.add("hide")
   addHoverclass()
 
 
@@ -37,7 +42,7 @@ function handleClick(e){
   const cell = e.target
   const whoseTurn = currentIcon ? xClass : oClass
   placeMark(cell, whoseTurn)
-  
+  display.textContent= `${currentIcon ? oClass : xClass}'s turn`
   if(opponent === "friend"){
     if(checkWinningCombos(whoseTurn)){
       endGame(true,whoseTurn)
@@ -46,6 +51,7 @@ function handleClick(e){
       endGame(false,whoseTurn)
     }
     else{
+      
       swapTurn(whoseTurn)
       addHoverclass()
     }
@@ -89,4 +95,5 @@ function endGame(win, turn){
   }
   gameBoard.style.filter = "blur(10px)"
   finalScreen.classList.remove("hide")
+  restartBtn.classList.remove("hide")
 }
