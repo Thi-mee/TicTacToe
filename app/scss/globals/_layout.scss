@@ -6,9 +6,10 @@
 
 .wrapper{
   margin-top: var(--nav-size);
-  height: 110vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 4em;
+  margin-bottom: 5em;
 }
